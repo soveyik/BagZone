@@ -371,3 +371,107 @@ border-bottom: 0.1rem solid #121212;
 .footer .created span{
     color: var(--main-color);
 }
+
+/* ===============================
+   RESPONSIVE TASARIM (MOBİL UYUM)
+   =============================== */
+
+/* Tablet ve Küçük Ekranlar (991px ve altı) */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%; /* Yazı boyutlarını genel olarak küçültür */
+    }
+
+    .header {
+        padding: 1.5rem 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+/* Mobil Menü Geçişi (768px ve altı) */
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline-block; /* Menü butonunu görünür yapar */
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 100%; right: -100%; /* Başlangıçta ekranın dışında tutar */
+        background: #fff;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+        flex-direction: column;
+        display: flex;
+        transition: 0.3s linear;
+    }
+
+    .header .navbar.active {
+        right: 0; /* script.js tetiklediğinde içeri çeker */
+    }
+
+    .header .navbar a {
+        color: var(--black);
+        margin: 2rem;
+        font-size: 2rem;
+        display: block;
+    }
+
+    .header .search-form {
+        width: 90%;
+        right: 2rem;
+    }
+
+    .anasayfa {
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .anasayfa .content h3 {
+        font-size: 4.5rem;
+    }
+
+    /* Ürün kutularını alt alta veya ikili sıralar */
+    .urunler .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
+
+    .hakkimizda .row {
+        flex-direction: column; /* Görsel ve metni alt alta getirir */
+    }
+
+    .iletisim .row {
+        flex-direction: column;
+    }
+
+    .iletisim .row .map {
+        width: 100%;
+        height: 30rem;
+    }
+
+    .sepet table {
+        display: block;
+        overflow-x: auto; /* Tablonun taşmasını engeller */
+    }
+}
+
+/* Küçük Telefonlar (450px ve altı) */
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .header .search-form {
+        width: 85%;
+    }
+
+    .footer .share a {
+        height: 4rem;
+        width: 4rem;
+        line-height: 4rem;
+        font-size: 1.5rem;
+    }
+}
