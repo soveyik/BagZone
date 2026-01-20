@@ -9,15 +9,28 @@
 </head>
 <body>
 
+    <!-- HEADER -->
   <header class="header">
-    <a href="index.html" class="logo"><img src="img/logo.png" alt="logo"></a>
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="logo">
+    </a>
     <nav class="navbar">
       <a href="index.html">Anasayfa</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="urunler.html">Ürünlerimiz</a>
-      <a href="trendler.html" class="active">Trendler</a>
-      <a href="iletisim.html">İletişim</a>
+      <a href="index.html#urunler">Ürünler</a>
+      <a href="index.html#hakkimizda">Hakkımızda</a>
+      <a href="index.html#iletisim">İletişim</a>
     </nav>
+    <div class="buttons">
+      <button id="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+      <button><i class="fa-solid fa-cart-shopping"></i></button>
+      <button id="menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+     <div class="search-form">
+            <input type="search" id="search-box" placeholder="Ürün adı yazın...">
+            <label for="search-box" class="fas fa-magnifying-glass"></label>
+        </div>
   </header>
 <!-- ÜRÜNLERİMİZ BAŞLANGICI -->
      <section class="urunler">
