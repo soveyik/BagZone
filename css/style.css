@@ -433,6 +433,41 @@ html, body {
         font-size: 4rem;
         line-height: 1.2;
     }
+    
+    /* Resim ve Metni Alt Alta Getir */
+    .hakkimizda .row {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    /* Resim Alanını Düzenle */
+    .hakkimizda .row .image {
+        width: 100% !important;
+        margin-bottom: 2rem;
+    }
+
+    /* Resmi Ekran Genişliğine Uyarla */
+    .hakkimizda .row .image img {
+        width: 80% !important; /* Resmin çok devasa durmaması için %80 yaptık */
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    /* İçerik Yazısını Düzenle */
+    .hakkimizda .content {
+        width: 100% !important;
+        padding: 0 2rem;
+    }
+
+    .hakkimizda .content h3 {
+        font-size: 2.5rem;
+    }
+
+    .hakkimizda .content p {
+        font-size: 1.6rem;
+        line-height: 1.6;
+    }
 
     /* Ürün Kutuları (Grid) Düzenlemesi */
     .urunler .box-container {
