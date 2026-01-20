@@ -373,105 +373,127 @@ border-bottom: 0.1rem solid #121212;
 }
 
 /* ===============================
-   RESPONSIVE TASARIM (MOBİL UYUM)
+   GELİŞMİŞ RESPONSIVE DÜZENLEME
    =============================== */
 
-/* Tablet ve Küçük Ekranlar (991px ve altı) */
-@media (max-width: 991px) {
-    html {
-        font-size: 55%; /* Yazı boyutlarını genel olarak küçültür */
-    }
-
-    .header {
-        padding: 1.5rem 2rem;
-    }
-
-    section {
-        padding: 2rem;
-    }
+/* Tüm sayfa için yatay kaydırmayı engelle */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
 }
 
-/* Mobil Menü Geçişi (768px ve altı) */
+@media (max-width: 991px) {
+    html { font-size: 55%; }
+    header { padding: 1.5rem 2rem; }
+}
+
 @media (max-width: 768px) {
-    #menu-btn {
-        display: inline-block; /* Menü butonunu görünür yapar */
+    /* Header & Navbar Düzenlemesi */
+    #menu-btn { 
+        display: inline-block !important; /* Hamburger ikonunu göster */
+        order: 4; 
     }
 
     .header .navbar {
-        position: absolute;
-        top: 100%; right: -100%; /* Başlangıçta ekranın dışında tutar */
-        background: #fff;
-        width: 30rem;
-        height: calc(100vh - 9.5rem);
-        flex-direction: column;
+        position: fixed;
+        top: 0; right: -100%;
+        width: 100%; /* Tam ekran menü */
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98); /* Şık yarı saydam beyaz */
         display: flex;
-        transition: 0.3s linear;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .header .navbar.active {
-        right: 0; /* script.js tetiklediğinde içeri çeker */
+        right: 0; /* script.js tetiklediğinde menü gelir */
     }
 
     .header .navbar a {
-        color: var(--black);
-        margin: 2rem;
-        font-size: 2rem;
-        display: block;
+        font-size: 3rem;
+        margin: 1.5rem 0;
+        color: #13131a;
     }
 
-    .header .search-form {
-        width: 90%;
-        right: 2rem;
-    }
-
+    /* Anasayfa Banner Düzenlemesi */
     .anasayfa {
-        background-position: left;
-        justify-content: center;
+        padding-top: 12rem;
+        background-position: center;
+    }
+
+    .anasayfa .content {
+        max-width: 100%;
         text-align: center;
     }
 
     .anasayfa .content h3 {
-        font-size: 4.5rem;
+        font-size: 4rem;
+        line-height: 1.2;
     }
 
-    /* Ürün kutularını alt alta veya ikili sıralar */
+    /* Ürün Kutuları (Grid) Düzenlemesi */
     .urunler .box-container {
-        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        display: grid;
+        grid-template-columns: 1fr; /* Mobilde tekli sırala */
+        gap: 2rem;
+        padding: 0 1rem;
     }
 
-    .hakkimizda .row {
-        flex-direction: column; /* Görsel ve metni alt alta getirir */
+    .urunler .box {
+        width: 100%; /* Kutuyu tam genişlik yap */
+        margin: 0 auto;
     }
 
-    .iletisim .row {
-        flex-direction: column;
+    /* İletişim ve Hakkımızda */
+    .iletisim .row, .hakkimizda .row {
+        flex-direction: column !important;
     }
 
-    .iletisim .row .map {
+    .iletisim .row .map, .hakkimizda .image img {
         width: 100%;
-        height: 30rem;
+        height: auto;
+        margin-bottom: 2rem;
     }
 
+    /* Sepet Tablosu (Mobil Kart Görünümü) */
     .sepet table {
         display: block;
-        overflow-x: auto; /* Tablonun taşmasını engeller */
+        width: 100%;
+    }
+
+    .sepet table thead {
+        display: none; /* Başlıkları mobilde gizle */
+    }
+
+    .sepet table tbody tr {
+        display: block;
+        margin-bottom: 2rem;
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .sepet table td {
+        display: block;
+        padding: 0.5rem 0;
+        font-size: 1.6rem;
+    }
+
+    .sepet .toplam {
+        text-align: center;
+        margin-top: 2rem;
     }
 }
 
-/* Küçük Telefonlar (450px ve altı) */
-@media (max-width: 450px) {
-    html {
-        font-size: 50%;
-    }
-
-    .header .search-form {
-        width: 85%;
-    }
-
-    .footer .share a {
-        height: 4rem;
-        width: 4rem;
-        line-height: 4rem;
-        font-size: 1.5rem;
+/* Küçük Telefonlar (480px altı) */
+@media (max-width: 480px) {
+    .header .logo img { height: 4rem; }
+    .header .buttons a, .header .buttons button {
+        font-size: 2rem;
+        margin-left: 1rem;
     }
 }
