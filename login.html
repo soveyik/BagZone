@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAGZONE | Giriş Yap</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="logo">
+        </a>
+
+        <nav class="navbar">
+            <a href="index.html">Anasayfa</a>
+            <a href="urunler.html">Ürünlerimiz</a>
+        </nav>
+    </header>
+
+    <section class="iletisim">
+        <h1 class="heading">GİRİŞ YAP</h1>
+
+        <div class="row" style="justify-content:center;">
+            <form id="loginForm" style="max-width:500px;">
+                <h3>Hoş Geldiniz</h3>
+
+                <div class="inputBox">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="E-posta" required>
+                </div>
+
+                <div class="inputBox">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Şifre" required>
+                </div>
+
+                <input type="submit" class="btn" value="Giriş Yap">
+
+                <p style="color:white; font-size:1.4rem; margin-top:2rem;">
+                    Hesabınız yok mu?
+                    <a href="#" style="color:var(--main-color);">Kayıt Ol</a>
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="created">
+            created by <span>Şevval Öveyik</span> | Tüm Hakları Saklıdır.
+        </div>
+    </section>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

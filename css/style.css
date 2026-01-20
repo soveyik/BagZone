@@ -101,6 +101,31 @@ section{
 #menu-btn{
     display: none;
 }
+.header .search-form {
+    position: absolute;
+    top: 115%; right: 7%;
+    background: #fff;
+    width: 40rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    transition: 0.2s linear;
+}
+
+.header .search-form.active {
+    transform: scaleY(1);
+}
+
+.header .search-form input {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: #13131a;
+}
 
 /* anasayfa başlangıcı */
 .anasayfa{
